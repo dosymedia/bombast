@@ -1,3 +1,25 @@
+Set Up --- ✄ -----------------------:
+	☐ set up database
+		☐ database migration
+		☐ database seeds / factories
+	☐ add packages
+		☐ generators
+		☐ sentry
+		☐ mockery
+		☐ phpunit
+		☐ factory muff
+		☐ 
+	☐ add tests
+	☐ add repositories
+	☐ authentication
+		☐ create user model
+		☐ validation
+		☐ create login
+		☐ create registraton
+	☐ grunt.js
+		☐ complete package list
+	☐ auto deploy/sync to github
+
 Accounts --- ✄ -----------------------:
 Accounts 				Password
 	admin 					password
