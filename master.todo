@@ -1,0 +1,224 @@
+Accounts --- ✄ -----------------------:
+Accounts 				Password
+	admin 					password
+
+
+Features --- ✄ -----------------------:
+- Timeline System
+	( timestamp )
+	☐ every thread has a custom date separate from the post date/date modified/etc 
+	☐ create property for complete and incomplete threads
+	☐ create dynamic list for this custom date
+	☐ category sort by timestamp option
+
+- Open Thread
+	☐ create property for open threads
+	☐ create thread desc
+	☐ create list of open threads
+	☐ highlight open thread in category view
+		
+- Subaccounts
+	☐ all new registrants are players
+	☐ subaccounts with instant switch
+	☐ players register new -character- subaccounts 
+	
+- Registration & New User Flow 
+	1. create player account
+	2. create new character / character draft
+	3. submit to administrative review queue (see where you are in line and what your app's status is)
+		4. if corrections were requested, then apply changes and resend 
+	5. once accepted, start playing! recommended that you -
+		6. request player groups, send your app with custom input to group leaders for review
+		7. make and answer plotters 
+		8. create an open thread
+
+*consider making users sign in with email instead of username to eliminate the need
+for a username field, thus shifting user_display to user_name
+
+- Tag System
+	Defaults must be deleteable/rewritable
+	mature/nsfw
+	event
+		event: blackhorn
+		event: shuffle
+		event: moonshine
+	winner/thread of the month/staff's choice/recommended read
+	story
+		storyline: albus & poo
+		storyline: sea honey
+	completed < - no, but allow self-completed threads by thread owner 
+
+- Unique User Dashboards
+	Users have unique and customizable dashboards that may include*
+		* any section may be locked in by administrator, so admin messages must show or new characters must show. 
+
+		group posts
+		subscribed threads
+		chatbox
+		new posts
+		subscribed boards
+		administrator messages
+		new private messages
+		to do list / thread tracker
+		starred characters/threads
+		latest board post
+		hot topicc
+		random thread/character
+
+- Administrative Panel
+	☐ Character Statistics Available
+			Groups
+			Gender
+
+
+- Participants Panel
+- Post Drafts
+- Thread Subsciption
+- Award System
+- Player Run Shops / Item Trading
+- Mediawiki integration
+- Chatbox
+- Built in Word Counter
+- Affiliation Manager
+- Threaded Private Message System
+- User Points & Bank
+- User Created Groups
+	
+
+Categories --- ✄ -----------------------:
+
+
+
+
+Member Groups --- ✄ -----------------------:
+	1	Administrator
+	2	Moderator
+	3	Member
+	4	Character
+	5	Joining
+
+	06 +	Status Groups
+		Retired
+		Dead
+		Inactive
+		Hiatus
+	10 +	Character Groups 
+
+
+
+Database Structure --- ✄ -----------------------:
+categories
+	cat_id
+	cat_name
+	cat_desc
+
+posts
+	id
+	content
+	date
+	topic_id	fk
+	user_id		fk
+
+topics
+	id
+	subject
+	desc
+	timestamp
+	ingame date
+	cat_id		fk
+	user_id		fk
+
+subcategories
+	id
+	cat_id		fk
+	title
+	description
+	
+(manageaccounts)
+
+users 
+	user_id
+	parent_id
+	user_display
+	avatar_id		fk
+	
+user_subaccounts 
+	user_id
+	parent_id
+	
+user_groups
+	user_id
+	group_id
+
+groups
+	id
+	name
+	description
+	parent_id
+
+images
+	id
+	filename
+	mime_type (varchar50)
+	file_size (int11)
+	image_data (mediumblob)
+	
+(edituser)
+
+users
+	everything
+
+user_groups
+	user_id
+	group_id
+
+groups
+	id
+	name	
+
+
+User Table --- ✄ -----------------------:
+
+user_display
+user_name
+user_location
+user_gender
+user_birth
+user_intro
+user_posts
+user_email
+user_password - sha1
+avatar_id
+
+playby
+birthdate
+gender
+occupation
+rank
+personality
+biography
+freeform
+
+Database Relationships --- ✄ -----------------------:
+Users have many
+	posts
+
+Categories have many
+	boards
+	subcategories
+
+Subcategories have many
+	boards
+	subsubcategories
+
+Boards have many
+	topics
+
+Topics have many 
+	posts
+
+Many Users have many
+	groups
+
+A Group has many Topics through
+	Users ? 
