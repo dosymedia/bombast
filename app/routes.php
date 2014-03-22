@@ -13,5 +13,21 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	//return View::make('hello');
+	return User::all();
 });
+
+Route::get('user/dashboard', array(
+	'uses'	=>	'UserController@showDashboard',
+	'as'	=>	'dashboard'
+));
+
+Route::get('user/{id}/posts', array(
+	'uses'	=>	'UserController@showUserPosts',
+	'as'	=>	'userPosts'
+));
+
+Route::resource('user', 'UserController');
+
+
+//Route::get('user/profile/{id}', 'UserController@showProfile');

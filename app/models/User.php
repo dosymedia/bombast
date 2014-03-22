@@ -49,4 +49,26 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	protected $guarded = array('id', 'password'); // Don't mass assign these! 
+
+	// Factory settings
+	// Remove password confirmation
+	public $autoPurgeRedundantAttributes = true;
+
+/* ==========================================================================
+   Ardent Validation  
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Relationships 
+   ========================================================================== */
+
+   // Post
+   // Group
+   // Topic
+   // Board
+   // Category
+   // Tag
+
 }

@@ -1,9 +1,9 @@
 Set Up --- ✄ -----------------------:
-	☐ set up database
-		☐ database migration
-		☐ database seeds / factories
+	✔ set up database @done (14-03-22 04:35)
+		✔ database migration @done (14-03-21 03:44)
+		✔ database seeds @done (14-03-22 04:28)
 	☐ add packages
-		☐ generators
+		✔ generators @done (14-03-21 03:48)
 		☐ sentry
 		☐ mockery
 		☐ phpunit
@@ -11,18 +11,53 @@ Set Up --- ✄ -----------------------:
 		☐ 
 	☐ add tests
 	☐ add repositories
+	☐ factories
 	☐ authentication
-		☐ create user model
+		✔ create user model @done (14-03-22 04:29)
 		☐ validation
 		☐ create login
 		☐ create registraton
 	☐ grunt.js
 		☐ complete package list
 	☐ auto deploy/sync to github
+	☐ complete basic user functions
+		✔ basic pages @done (14-03-22 08:45)
+			✔ user.show 			(user/{user}) @done (14-03-22 08:35)
+			✔ show all users 	(user/{user?}) @done (14-03-22 08:44)
+			✔ user.create 		(user/create) @done (14-03-22 08:36)
+			✔ user dashboard 	(user/dashboard) @done (14-03-22 08:36)
+			✔ user posts 			(user/posts) @done (14-03-22 08:44)
+			✔ user.edit 			(user/edit) @done (14-03-22 08:44)
+			✔ user.update @done (14-03-22 08:45)
+			✔ user.destroy @done (14-03-22 08:45)
+			✔ user.store @done (14-03-22 08:45)
+			✔ user.index @done (14-03-22 08:45)
+		☐ show profile
+		☐ user dashboard
+		☐ player - character separation / subaccounts
+		☐ character seeds
+		☐ show character profile
+		☐ user repository
+
+Considerations --- ✄ -----------------------:
+	should the profile page be at; 
+		user/profile/4138908
+		user/482
+		user/terri
+		user/teddy-rose
+
+
+
+
 
 Accounts --- ✄ -----------------------:
 Accounts 				Password
-	admin 					password
+	admin 					cahuna
+
+	seraphim				blackhalo
+	admin 					cahuna
+	thedoctor 			tardis
+	cakehole 				metallica
 
 
 Features --- ✄ -----------------------:
@@ -98,12 +133,14 @@ for a username field, thus shifting user_display to user_name
 - Thread Subsciption
 - Award System
 - Player Run Shops / Item Trading
+		(user/shop, user/inventory)
 - Mediawiki integration
 - Chatbox
 - Built in Word Counter
 - Affiliation Manager
 - Threaded Private Message System
 - User Points & Bank
+		(user/bank)
 - User Created Groups
 	
 

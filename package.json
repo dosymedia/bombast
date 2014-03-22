@@ -1,0 +1,29 @@
+{
+  "name": "bombast",
+  "version": "0.0.0",
+  "description": "PBP RPG forum.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dosymedia/bombast.git"
+  },
+  "keywords": [
+    "laravel"
+  ],
+  "author": "Terri Morgan",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/dosymedia/bombast/issues"
+  },
+  "homepage": "https://github.com/dosymedia/bombast",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-concat": "^0.3.0"
+  }
+}
