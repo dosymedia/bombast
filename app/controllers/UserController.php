@@ -3,17 +3,17 @@
 //use repositories\storage\user\UserRepository as User;
 class UserController extends BaseController {
 
-	//protected $user;
+	protected $user;
 	//protected $layout = 'layouts.master';
 
-	// Inject user repository.
-	/*public function __construct(User $user) {
+	// Construct user, extrapolate from database. 
+	public function __construct(User $user) {
 		$this->user = $user;
-		//$this->beforeFilter('csrf', array('on'=>'post'));
+		$this->beforeFilter('csrf', array('on'=>'post'));
 		//parent::__construct();
 	}
-	*/
-
+	
+//	View::share('user', 'users');
 
 /* ==========================================================================
    Basic User Functions
@@ -22,15 +22,16 @@ class UserController extends BaseController {
 	// User index
 	public function index()
 	{
-		return User::all();
+		$users = $this->user->all();
+		return View::make('user.index', ['users' => $users]);
 	}
 
 
 	// Show user @ user/{user}
 	public function show($id)
 	{
-		//return $this->user->find($id);
-		return View::make('user.show');
+		$user = $this->user->find($id);
+		return View::make('user.show', compact('user'));
 	}
 	
 	// Create user
@@ -73,6 +74,12 @@ class UserController extends BaseController {
 	public function showDashboard()
 	{
 		return View::make('user/dashboard');
+	}
+
+	// Show user by user name
+	public function showUserName()
+	{
+		return View::make('user.show');
 	}
 
 	// User Posts

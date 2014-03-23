@@ -55,6 +55,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	// Remove password confirmation
 	public $autoPurgeRedundantAttributes = true;
 
+
+/*	
+	Route::get('users', function () {
+		$user = User::find(1);
+		return $user->user_name;
+	})
+/*
 /* ==========================================================================
    Ardent Validation  
    ========================================================================== */

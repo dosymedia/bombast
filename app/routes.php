@@ -22,6 +22,10 @@ Route::get('user/dashboard', array(
 	'as'	=>	'dashboard'
 ));
 
+/*Route::get('user/{user_name}', array(
+	'uses'	=>	'UserController@showUserName',
+));
+*/
 Route::get('user/{id}/posts', array(
 	'uses'	=>	'UserController@showUserPosts',
 	'as'	=>	'userPosts'

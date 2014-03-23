@@ -8,9 +8,10 @@ Set Up --- ✄ -----------------------:
 		☐ mockery
 		☐ phpunit
 		☐ factory muff
-		☐ 
-	☐ add tests
+	☐ add tests		
 	☐ add repositories
+		☐ user
+		☐ post
 	☐ factories
 	☐ authentication
 		✔ create user model @done (14-03-22 04:29)
@@ -32,12 +33,13 @@ Set Up --- ✄ -----------------------:
 			✔ user.destroy @done (14-03-22 08:45)
 			✔ user.store @done (14-03-22 08:45)
 			✔ user.index @done (14-03-22 08:45)
-		☐ show profile
+		☐ show profile	@started
+			☐ research, add sentry 2
+			☐ player separation, add parent id to table
+			☐ add user limits to database
+			☐ character profile page
+			☐ character seeds
 		☐ user dashboard
-		☐ player - character separation / subaccounts
-		☐ character seeds
-		☐ show character profile
-		☐ user repository
 
 Considerations --- ✄ -----------------------:
 	should the profile page be at; 
@@ -46,8 +48,11 @@ Considerations --- ✄ -----------------------:
 		user/terri
 		user/teddy-rose
 
-
-
+* users sign in with email instead of username to eliminate the need
+for a username field, thus shifting user_display to user_name
+subaccounts -
+	parent id can be equal to id 
+	parent id can be equal to null
 
 
 Accounts --- ✄ -----------------------:
@@ -89,8 +94,6 @@ Features --- ✄ -----------------------:
 		7. make and answer plotters 
 		8. create an open thread
 
-*consider making users sign in with email instead of username to eliminate the need
-for a username field, thus shifting user_display to user_name
 
 - Tag System
 	Defaults must be deleteable/rewritable
@@ -127,6 +130,13 @@ for a username field, thus shifting user_display to user_name
 			Groups
 			Gender
 
+- Search
+	☐ Group view has 'list' and 'visual' mode
+			visual mode shows icon, data, sepration for searched group
+			list mode shows text only
+	☐ user view has 'player', 'staff', and 'character'
+	☐ 
+	☐ 
 
 - Participants Panel
 - Post Drafts
