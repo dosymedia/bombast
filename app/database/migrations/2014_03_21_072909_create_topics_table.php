@@ -18,10 +18,6 @@ class CreateTopicsTable extends Migration {
 			$table->string('topic_name', 65);
 			$table->string('topic_desc')->nullable();
 			$table->date('ingame_date')->nullable();
-			$table->foreign('cat_id')->references('id')->on('categories')->unsigned();
-			$table->foreign('board_id')->references('id')->on('boards')->unsigned();
-			$table->foreign('user_id')->references('id')->on('users')->unsigned();
-			$table->foreign('group_id')->references('id')->on('groups')->unsigned();
 			$table->timestamps();
 		});
 	}

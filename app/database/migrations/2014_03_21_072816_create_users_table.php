@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration {
 			$table->string('user_posts')->default(0);
 			$table->string('user_gender')->nullable();
 			$table->string('user_birth')->nullable();
-			$table->foreign('avatar_id')->references('id')->on('images')->unsigned();
 			$table->string('playby')->nullable();
 			$table->string('birthdate')->nullable();
 			$table->string('gender')->nullable();

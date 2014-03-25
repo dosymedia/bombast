@@ -16,8 +16,6 @@ class CreatePostsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('content');
-			$table->foreign('user_id')->references('id')->on('users')->unsigned();
-			$table->foreign('topic_id')->references('id')->on('topics')->unsigned();
 			$table->timestamps();
 		});
 	}

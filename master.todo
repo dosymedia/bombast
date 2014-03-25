@@ -1,10 +1,10 @@
-Set Up --- ✄ -----------------------:
+Daily --- ✄ -----------------------:
 	✔ set up database @done (14-03-22 04:35)
 		✔ database migration @done (14-03-21 03:44)
 		✔ database seeds @done (14-03-22 04:28)
 	☐ add packages
 		✔ generators @done (14-03-21 03:48)
-		☐ sentry
+		✔ sentry @done (14-03-25 06:50)
 		☐ mockery
 		☐ phpunit
 		☐ factory muff
@@ -34,11 +34,15 @@ Set Up --- ✄ -----------------------:
 			✔ user.store @done (14-03-22 08:45)
 			✔ user.index @done (14-03-22 08:45)
 		☐ show profile	@started
-			☐ research, add sentry 2
-			☐ player separation, add parent id to table
+			✔ research, add sentry 2 	@started @done (14-03-25 08:47)
+				✔ install @done (14-03-25 06:50)
+			☐ player separation
+			☐ drop gender, use user_gender for all
+			☐ drop birthdate, user_birth
+			✔ add parent id to table @done (14-03-25 06:49)
 			☐ add user limits to database
 			☐ character profile page
-			☐ character seeds
+				☐ character seeds
 		☐ user dashboard
 
 Considerations --- ✄ -----------------------:

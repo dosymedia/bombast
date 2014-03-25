@@ -15,8 +15,6 @@ class CreateBoardsTable extends Migration {
 		Schema::create('boards', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->foreign('cat_id')->references('id')->on('categories')->unsigned();
-			$table->foreign('group_id')->references('id')->on('groups')->unsigned();
 			$table->string('board_name', 50);
 			$table->string('board_desc')->nullable();
 		});

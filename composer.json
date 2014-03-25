@@ -9,7 +9,7 @@
 		"laravelbook/ardent": "dev-master"
 	},
 	"require-dev": {
-    	"fzaninotto/faker": "1.3.*@dev",
+    	"fzaninotto/faker": "1.3.*@dev"
   	},
 	"autoload": {
 		"classmap": [
