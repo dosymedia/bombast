@@ -3,10 +3,14 @@
 @section('content')
 	<div class="profile">
 	
+	<?php 
+		// Translate the date
+		$created_at = $user->created_at;
+		$join_date = date('F j, Y', strtotime($created_at)); ?>
 
 		<h1> {{{ $user->user_display }}} 	</h1>
 		<h2> ({{{ $user->user_name }}}) 		</h2>
-		<h3> Located in {{{ $user->user_location }}}, Joined {{{ $user->created_at }}} </h3>
+		<h3> Located in {{{ $user->user_location }}}, Joined {{ $join_date }} </h3>
 
 		<div class="socialbar">
 			<a href="#"><img src="{{ URL::asset('img/x.gif') }}" alt="Social"></a>
@@ -30,7 +34,8 @@
 			<li><strong>Limit: </strong> I will not write this. (user_limit)			</li>
 			<li><strong>Triggers: </strong> bronies, flowers, sprinkles (user_trigger)	</li>
 		</ul>
-
+		
+		@if($user->parent_id == 0 || null )
 		<div class="listaccounts">
 			<table cellspacing="0">
 				<caption> Terri's Characters </caption>
@@ -60,6 +65,7 @@
 				</tr> 
 			</table>
 		</div>
+		@endif
 
 		
 	</div>

@@ -4,11 +4,12 @@ class UsersTableSeeder extends Seeder {
 
 	public function run()
 	{
+		User::truncate();
 		$user = User::create(array(
 			'user_name'		=>	'admin',
 			'user_display'	=>	'Terri',
 			'email'			=>	'terri@mail.com',
-			'password'		=>	'cahuna',
+			'password'		=>	Hash::make('cahuna'),
 			'user_location'	=>	'New York',
 			'user_intro'	=>	'I\'m an artist and web developer interested in visual narrative.',
 		));

@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
+Route::get('/', function() {
 	//return View::make('hello');
 	return User::all();
 });
@@ -31,7 +30,14 @@ Route::get('user/{id}/posts', array(
 	'as'	=>	'userPosts'
 ));
 
+Route::get('admin', function() {
+	return 'The fax machine is in danger.';
+})->before('auth');
+
 Route::resource('user', 'UserController');
 
+Route::get('login', 'SessionController@create');
+Route::get('logout', 'SessionController@destroy');
+Route::resource('session', 'SessionController');
 
 //Route::get('user/profile/{id}', 'UserController@showProfile');

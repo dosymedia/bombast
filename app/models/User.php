@@ -61,7 +61,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$user = User::find(1);
 		return $user->user_name;
 	})
-/*
+*/
+
+
+
 /* ==========================================================================
    Ardent Validation  
    ========================================================================== */
