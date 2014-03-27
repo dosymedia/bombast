@@ -65,9 +65,26 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 
 
+
 /* ==========================================================================
    Ardent Validation  
    ========================================================================== */
+public static $rules= [
+	'user_name' => 'required',
+	'password' => 'required'
+	];
+
+public $errors;
+
+	public function isValid()
+	{
+		$validation = Validator::make($this->attributes, static::$rules);
+
+		if ($validation->passes()) return true;
+
+		$this->errors = $validation->messages();
+		return false;
+	}
 
 
 /* ==========================================================================

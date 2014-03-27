@@ -1,49 +1,35 @@
-Daily --- ✄ -----------------------:
-	✔ set up database @done (14-03-22 04:35)
-		✔ database migration @done (14-03-21 03:44)
-		✔ database seeds @done (14-03-22 04:28)
+Daily --- ✄ -----------------------:	
 	☐ add packages
-		✔ generators @done (14-03-21 03:48)
-		✔ sentry @done (14-03-25 06:50)
 		☐ mockery
 		☐ phpunit
 		☐ factory muff
-	☐ add tests		
+	☐ add tests		@next
 	☐ add repositories
 		☐ user
 		☐ post
 	☐ factories
 	☐ authentication @started
-		✔ create user model @done (14-03-22 04:29)
-		☐ validation
-		✔ create login @done (14-03-26 07:52)
-		☐ create registraton
+		☐ validation with ardent @next
 	☐ grunt.js
 		☐ complete package list
-	☐ auto deploy/sync to github
+			☐ concat
+			☐ uglify
+			☐ imagemin
+	✘ auto deploy/sync to github @cancelled (14-03-27 08:01)
 	☐ complete basic user functions
-		✔ basic pages @done (14-03-22 08:45)
-			✔ user.show 			(user/{user}) @done (14-03-22 08:35)
-			✔ show all users 	(user/{user?}) @done (14-03-22 08:44)
-			✔ user.create 		(user/create) @done (14-03-22 08:36)
-			✔ user dashboard 	(user/dashboard) @done (14-03-22 08:36)
-			✔ user posts 			(user/posts) @done (14-03-22 08:44)
-			✔ user.edit 			(user/edit) @done (14-03-22 08:44)
-			✔ user.update @done (14-03-22 08:45)
-			✔ user.destroy @done (14-03-22 08:45)
-			✔ user.store @done (14-03-22 08:45)
-			✔ user.index @done (14-03-22 08:45)
 		☐ show profile	@started
-			✔ research, add sentry 2 	@started @done (14-03-25 08:47)
-				✔ install @done (14-03-25 06:50)
 			☐ player separation @started
 			☐ drop gender, use user_gender for all
 			☐ drop birthdate, user_birth
-			✔ add parent id to table @done (14-03-25 06:49)
 			☐ add user limits to database
 			☐ character profile page
 				☐ character seeds
-		☐ user dashboard
+			☐ image upload
+		☐ user pages
+			☐ user dashboard
+			☐ edit user 
+				☐ look up form model binding
+
 
 Considerations --- ✄ -----------------------:
 	should the profile page be at; 
@@ -58,6 +44,7 @@ subaccounts -
 	parent id can be equal to id 
 	parent id can be equal to null
 
+news is a blog feed glued into user dashboard
 
 Accounts --- ✄ -----------------------:
 Accounts 				Password
@@ -295,3 +282,28 @@ Many Users have many
 
 A Group has many Topics through
 	Users ? 
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ set up database @done (14-03-22 04:35) @project(Daily --- ✄ -----------------------)
+ ✔ database migration @done (14-03-21 03:44) @project(Daily --- ✄ -----------------------)
+ ✔ database seeds @done (14-03-22 04:28) @project(Daily --- ✄ -----------------------)
+ ✔ generators @done (14-03-21 03:48) @project(Daily --- ✄ -----------------------)
+ ✔ sentry @done (14-03-25 06:50) @project(Daily --- ✄ -----------------------)
+ ✔ create user model @done (14-03-22 04:29) @project(Daily --- ✄ -----------------------)
+ ✔ create login @done (14-03-26 07:52) @project(Daily --- ✄ -----------------------)
+ ✔ create registraton @next @done (14-03-27 07:58) @project(Daily --- ✄ -----------------------)
+ ✔ basic pages @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
+ ✔ user.show 			(user/{user}) @done (14-03-22 08:35) @project(Daily --- ✄ -----------------------)
+ ✔ show all users 	(user/{user?}) @done (14-03-22 08:44) @project(Daily --- ✄ -----------------------)
+ ✔ user.create 		(user/create) @done (14-03-22 08:36) @project(Daily --- ✄ -----------------------)
+ ✔ user dashboard 	(user/dashboard) @done (14-03-22 08:36) @project(Daily --- ✄ -----------------------)
+ ✔ user posts 			(user/posts) @done (14-03-22 08:44) @project(Daily --- ✄ -----------------------)
+ ✔ user.edit 			(user/edit) @done (14-03-22 08:44) @project(Daily --- ✄ -----------------------)
+ ✔ user.update @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
+ ✔ user.destroy @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
+ ✔ user.store @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
+ ✔ user.index @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
+ ✔ research, add sentry 2 	@started @done (14-03-25 08:47) @project(Daily --- ✄ -----------------------)
+ ✔ install @done (14-03-25 06:50) @project(Daily --- ✄ -----------------------)
+ ✔ add parent id to table @done (14-03-25 06:49) @project(Daily --- ✄ -----------------------)

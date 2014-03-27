@@ -43,7 +43,16 @@ class UserController extends BaseController {
 	// Store user
 	public function store()
 	{
-		//return View::make('user.edit');
+		$input = Input::all();
+
+		if ( ! $this->user->fill($input)->isValid()) 
+		{
+			return Redirect::back()->withInput()->withErrors($this->user->errors);
+		}
+
+		$this->user->save();
+
+		return Redirect::route('user.index');
 	}
 
 
@@ -87,6 +96,8 @@ class UserController extends BaseController {
 	{
 		return View::make('user.posts');
 	}
+
+
 
 
 }
