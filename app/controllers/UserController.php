@@ -50,6 +50,7 @@ class UserController extends BaseController {
 			return Redirect::back()->withInput()->withErrors($this->user->errors);
 		}
 
+		$this->user->password = Hash::make(Input::get('password'));
 		$this->user->save();
 
 		return Redirect::route('user.index');
@@ -59,13 +60,20 @@ class UserController extends BaseController {
 	// Edit user
 	public function edit($id)
 	{
-		return View::make('user.edit');
+		$user = $this->user->find($id);
+
+		return View::make('user.edit', compact('user') );
 	}
 
 	// Update user
 	public function update($id)
 	{
-		// Update
+		$user = $this->user->findOrFail($id);
+		$user->fill(Input::all());
+		$this->user->password = Hash::make(Input::get('password'));
+		$user->save();
+		//return View::make('user.show', compact('user'));
+		return View::make('user.edit', compact('user') );
 	}
 
 	// Delete user

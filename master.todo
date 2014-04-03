@@ -9,7 +9,7 @@ Daily --- ✄ -----------------------:
 		☐ post
 	☐ factories
 	☐ authentication @started
-		☐ validation with ardent @next
+		☐ validation (with ardent?) @next
 	☐ grunt.js
 		☐ complete package list
 			☐ concat
@@ -24,11 +24,16 @@ Daily --- ✄ -----------------------:
 			☐ add user limits to database
 			☐ character profile page
 				☐ character seeds
-			☐ image upload
+			☐ image upload	@next
 		☐ user pages
 			☐ user dashboard
 			☐ edit user 
 				☐ look up form model binding
+			☐ restrict access to logged in users: 
+				☐ edit
+				☐ create character
+				☐ user dash
+				☐ admin
 
 
 Considerations --- ✄ -----------------------:
@@ -47,11 +52,10 @@ subaccounts -
 news is a blog feed glued into user dashboard
 
 Accounts --- ✄ -----------------------:
-Accounts 				Password
-	admin 					cahuna
+Accounts 			Email										Password
+	admin 			terri@mail.com 					cahuna
+	seraphim		lordofdeath@mail.com		blackhalo
 
-	seraphim				blackhalo
-	admin 					cahuna
 	thedoctor 			tardis
 	cakehole 				metallica
 
@@ -145,9 +149,22 @@ Features --- ✄ -----------------------:
 - User Created Groups
 	
 
-Categories --- ✄ -----------------------:
+Code Snippets --- ✄ -----------------------:
+	Image Upload:
+	if (Input::hasFile('avatar')) {
+				$avatar = Input::file('avatar');
+				$destinationPath = 'uploads';
+				$fileName = $file->getClientOriginalName();
+				$extension = $file->getClientOriginalExtension();
+				$upload_success = Input::file('file')->move($destinationPath, $fileName);
 
+				if ($upload_success) { return Response::json('success', 200); }
+				else { return Response::json('error', 400); }
 
+	Edit User:
+		$user->fill(Input::all());
+		$user->save();
+		return Redirect::to('user.edit');
 
 
 Member Groups --- ✄ -----------------------:

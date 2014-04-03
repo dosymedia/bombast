@@ -67,6 +67,6 @@
 		</div>
 		@endif
 
-		
+		{{ link_to_route('user.edit', 'Edit User', $user->id) }}
 	</div>
 @stop
