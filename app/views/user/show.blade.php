@@ -22,7 +22,7 @@
 		</div>
 
 		<p class="introduction">
-			<img src="{{ URL::asset('img/admin.png') }}" alt="" class="avatar">
+			<img src="{{ URL::asset($user->avatar_url) }}" alt="" class="avatar">
 			{{{ $user->user_intro }}}
 		</p>
 
@@ -30,9 +30,9 @@
 
 		<h4> Limitations </h4>
 		<ul class="limits">
-			<li><strong>Limit: </strong> I will write this. (user_limit) 	</li>
-			<li><strong>Limit: </strong> I will not write this. (user_limit)			</li>
-			<li><strong>Triggers: </strong> bronies, flowers, sprinkles (user_trigger)	</li>
+			<li><strong>Limit: </strong> I will write this. (user_limit_sex) 	</li>
+			<li><strong>Limit: </strong> I will not write this. (user_limit_violence)			</li>
+			<li><strong>Triggers: </strong> bronies, flowers, sprinkles (user_limit_trigger)	</li>
 		</ul>
 		
 		@if($user->parent_id == 0 || null )

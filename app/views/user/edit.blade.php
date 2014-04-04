@@ -29,7 +29,8 @@
 		{{ Form::radio('user_gender', 'Male') }} Male
 		{{ Form::radio('user_gender', 'Female') }} Female
 
-
+		<img src="{{ URL::asset($user->avatar_url) }}" alt="" class="avatar">
+		{{ Form::file('avatar') }} 
 
 		{{ Form::reset('Clear') }}
 		{{ Form::submit('Submit') }}

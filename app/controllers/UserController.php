@@ -69,8 +69,30 @@ class UserController extends BaseController {
 	public function update($id)
 	{
 		$user = $this->user->findOrFail($id);
+		$original_password = $user->password;
 		$user->fill(Input::all());
-		$this->user->password = Hash::make(Input::get('password'));
+		$password = Input::get('password');
+
+		// If the password is left empty, use the old one
+		if (empty($password)) {
+			$password = $original_password;
+			$user->password = Hash::make($password);
+		}
+
+		else {
+			$user->password = Hash::make($password);
+		}
+		// If there's an avatar, upload it
+		if (Input::hasFile('avatar')) {
+			$avatar = Input::file('avatar');
+			$avatar_url = '/img/' . $id . '/';
+			$destinationPath = public_path() . $avatar_url;
+			$extension = $avatar->getClientOriginalExtension();
+			$fileName = 'avatar.' . $extension;
+			$user->avatar_url = $avatar_url . $fileName; // Save URL in DB
+			$upload_success = $avatar->move($destinationPath, $fileName);
+		}
+
 		$user->save();
 		//return View::make('user.show', compact('user'));
 		return View::make('user.edit', compact('user') );

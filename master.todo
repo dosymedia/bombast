@@ -10,25 +10,21 @@ Daily --- ✄ -----------------------:
 	☐ factories
 	☐ authentication @started
 		☐ validation (with ardent?) @next
+			☐	create user
+			☐	edit user
 	☐ grunt.js
 		☐ complete package list
 			☐ concat
 			☐ uglify
 			☐ imagemin
-	✘ auto deploy/sync to github @cancelled (14-03-27 08:01)
+	☐	share global user variables across views
 	☐ complete basic user functions
 		☐ show profile	@started
 			☐ player separation @started
-			☐ drop gender, use user_gender for all
-			☐ drop birthdate, user_birth
-			☐ add user limits to database
 			☐ character profile page
 				☐ character seeds
-			☐ image upload	@next
 		☐ user pages
 			☐ user dashboard
-			☐ edit user 
-				☐ look up form model binding
 			☐ restrict access to logged in users: 
 				☐ edit
 				☐ create character
@@ -50,6 +46,8 @@ subaccounts -
 	parent id can be equal to null
 
 news is a blog feed glued into user dashboard
+
+user limits are integers in the DB, in admin panel each number can be set to a specific statement. 
 
 Accounts --- ✄ -----------------------:
 Accounts 			Email										Password
@@ -147,13 +145,14 @@ Features --- ✄ -----------------------:
 - User Points & Bank
 		(user/bank)
 - User Created Groups
-	
+- User galleries
+		(character images)
 
 Code Snippets --- ✄ -----------------------:
 	Image Upload:
 	if (Input::hasFile('avatar')) {
 				$avatar = Input::file('avatar');
-				$destinationPath = 'uploads';
+				$destinationPath = public_path() . 'uploads';
 				$fileName = $file->getClientOriginalName();
 				$extension = $file->getClientOriginalExtension();
 				$upload_success = Input::file('file')->move($destinationPath, $fileName);
@@ -166,6 +165,28 @@ Code Snippets --- ✄ -----------------------:
 		$user->save();
 		return Redirect::to('user.edit');
 
+	Age:
+	# object oriented
+		$from = new DateTime('1970-02-01');
+		$to   = new DateTime('today');
+		echo $from->diff($to)->y;
+		
+		# procedural
+		echo date_diff(date_create('1970-02-01'), date_create('today'))->y;
+		
+		OR 
+		
+		<?php
+		  //date in mm/dd/yyyy format; or it can be in other formats as well
+		  $birthDate = "12/17/1983";
+		  //explode the date to get month, day and year
+		  $birthDate = explode("/", $birthDate);
+		  //get age from date or birthdate
+		  $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2		]))) > date("md")
+		    ? ((date("Y") - $birthDate[2]) - 1)
+		    : (date("Y") - $birthDate[2]));
+		  echo "Age is:" . $age;
+		?>	
 
 Member Groups --- ✄ -----------------------:
 	1	Administrator
@@ -302,25 +323,35 @@ A Group has many Topics through
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
- ✔ set up database @done (14-03-22 04:35) @project(Daily --- ✄ -----------------------)
- ✔ database migration @done (14-03-21 03:44) @project(Daily --- ✄ -----------------------)
- ✔ database seeds @done (14-03-22 04:28) @project(Daily --- ✄ -----------------------)
- ✔ generators @done (14-03-21 03:48) @project(Daily --- ✄ -----------------------)
- ✔ sentry @done (14-03-25 06:50) @project(Daily --- ✄ -----------------------)
- ✔ create user model @done (14-03-22 04:29) @project(Daily --- ✄ -----------------------)
- ✔ create login @done (14-03-26 07:52) @project(Daily --- ✄ -----------------------)
+	✔ drop gender, use user_gender for all @done (14-04-03 23:53) @project(Daily --- ✄ -----------------------)
+	✔ drop birthdate, user_birth @done (14-04-03 23:53) @project(Daily --- ✄ -----------------------)
+	✔ add user limits to database @done (14-04-03 23:53) @project(Daily --- ✄ -----------------------)
+	✔ edit user @done (14-04-03 23:43) @project(Daily --- ✄ -----------------------)
+	✔	upload avatar url in database @done (14-04-03 23:22) @project(Daily --- ✄ -----------------------)
+	✔	 pass empty avatar field on edit page @done (14-04-03 23:22) @project(Daily --- ✄ -----------------------)
+	✔ look up form model binding @done (14-04-03 22:42) @project(Daily --- ✄ -----------------------)
+	✔	pass empty password fields in edit page @done (14-04-03 22:32) @project(Daily --- ✄ -----------------------)
+	✔ image upload @done (14-04-03 19:57) @project(Daily --- ✄ -----------------------)
+	✘ auto deploy/sync to github @cancelled (14-03-27 08:01) @project(Daily --- ✄ -----------------------)
  ✔ create registraton @next @done (14-03-27 07:58) @project(Daily --- ✄ -----------------------)
+ ✔ create login @done (14-03-26 07:52) @project(Daily --- ✄ -----------------------)
+ ✔ research, add sentry 2 	@started @done (14-03-25 08:47) @project(Daily --- ✄ -----------------------)
+ ✔ sentry @done (14-03-25 06:50) @project(Daily --- ✄ -----------------------)
+ ✔ install @done (14-03-25 06:50) @project(Daily --- ✄ -----------------------)
+ ✔ add parent id to table @done (14-03-25 06:49) @project(Daily --- ✄ -----------------------)
+ ✔ user.update @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
+ ✔ user.store @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
+ ✔ user.index @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
+ ✔ user.destroy @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
  ✔ basic pages @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
- ✔ user.show 			(user/{user}) @done (14-03-22 08:35) @project(Daily --- ✄ -----------------------)
+ ✔ user.edit 			(user/edit) @done (14-03-22 08:44) @project(Daily --- ✄ -----------------------)
+ ✔ user posts 			(user/posts) @done (14-03-22 08:44) @project(Daily --- ✄ -----------------------)
  ✔ show all users 	(user/{user?}) @done (14-03-22 08:44) @project(Daily --- ✄ -----------------------)
  ✔ user.create 		(user/create) @done (14-03-22 08:36) @project(Daily --- ✄ -----------------------)
  ✔ user dashboard 	(user/dashboard) @done (14-03-22 08:36) @project(Daily --- ✄ -----------------------)
- ✔ user posts 			(user/posts) @done (14-03-22 08:44) @project(Daily --- ✄ -----------------------)
- ✔ user.edit 			(user/edit) @done (14-03-22 08:44) @project(Daily --- ✄ -----------------------)
- ✔ user.update @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
- ✔ user.destroy @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
- ✔ user.store @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
- ✔ user.index @done (14-03-22 08:45) @project(Daily --- ✄ -----------------------)
- ✔ research, add sentry 2 	@started @done (14-03-25 08:47) @project(Daily --- ✄ -----------------------)
- ✔ install @done (14-03-25 06:50) @project(Daily --- ✄ -----------------------)
- ✔ add parent id to table @done (14-03-25 06:49) @project(Daily --- ✄ -----------------------)
+ ✔ user.show 			(user/{user}) @done (14-03-22 08:35) @project(Daily --- ✄ -----------------------)
+ ✔ set up database @done (14-03-22 04:35) @project(Daily --- ✄ -----------------------)
+ ✔ create user model @done (14-03-22 04:29) @project(Daily --- ✄ -----------------------)
+ ✔ database seeds @done (14-03-22 04:28) @project(Daily --- ✄ -----------------------)
+ ✔ generators @done (14-03-21 03:48) @project(Daily --- ✄ -----------------------)
+ ✔ database migration @done (14-03-21 03:44) @project(Daily --- ✄ -----------------------)
