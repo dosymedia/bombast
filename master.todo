@@ -1,9 +1,10 @@
 Daily --- ✄ -----------------------:	
 	☐ add packages
-		☐ mockery
-		☐ phpunit
+		✔ mockery @done (14-04-10 17:14)
+		✔ phpunit @done (14-04-10 17:14)
 		☐ factory muff
 	☐ add tests		@next
+		☐	fix user controller test (uses jway article)
 	☐ add repositories
 		☐ user
 		☐ post
@@ -30,7 +31,11 @@ Daily --- ✄ -----------------------:
 				☐ create character
 				☐ user dash
 				☐ admin
-
+Links: 
+	http://culttt.com/2013/07/22/getting-started-with-mockery/
+	http://culttt.com/2013/07/15/how-to-structure-testable-controllers-in-laravel-4/
+	http://culttt.com/2014/03/17/eloquent-tricks-better-repositories/
+	http://code.tutsplus.com/tutorials/testing-laravel-controllers--net-31456
 
 Considerations --- ✄ -----------------------:
 	should the profile page be at; 

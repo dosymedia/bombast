@@ -16,10 +16,15 @@ Route::get('/', function() {
 	return User::all();
 });
 
+Route::get('user/create/character', array(
+	'uses'	=>	'UserController@createCharacter',
+	'as'	=>	'createCharacter'
+))->before('auth');
+
 Route::get('user/dashboard', array(
 	'uses'	=>	'UserController@showDashboard',
 	'as'	=>	'dashboard'
-));
+))->before('auth');
 
 /*Route::get('user/{user_name}', array(
 	'uses'	=>	'UserController@showUserName',
@@ -34,6 +39,7 @@ Route::get('admin', function() {
 	return 'The fax machine is in danger.';
 })->before('auth');
 
+// Add special bananes before the resource
 Route::resource('user', 'UserController');
 
 Route::get('login', 'SessionController@create');

@@ -112,7 +112,7 @@ class UserController extends BaseController {
 	// User dashboard
 	public function showDashboard()
 	{
-		return View::make('user/dashboard');
+		return View::make('user.dashboard');
 	}
 
 	// Show user by user name
@@ -127,7 +127,13 @@ class UserController extends BaseController {
 		return View::make('user.posts');
 	}
 
-
+	// Create Character
+	public function createCharacter()
+	{
+		$this->user->id = 1;
+		$user = $this->user;
+		return View::make('user.create-character', compact('user'));
+	}
 
 
 }
